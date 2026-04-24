@@ -9,13 +9,14 @@
 
 // ── 設定區 ──────────────────────────────────
 const SPREADSHEET_ID  = "1WTt3GZ7WDMXpeFh-j1btJB28z8aHwRobE4GaJuEr_XY";
-const LINE_NOTIFY_TOKEN = "";        // 填入您的 LINE Notify Token
+const LINE_NOTIFY_TOKEN = "const LINE_NOTIFY_TOKEN = "WIUaYt/xGyngnzUy+81LpYyxml0owSZhr30oMvsZNyG2sDpQLi/nMyfuFYW+GMpZMhaaq+9bzywcxJ8ZFcbLmNI4X7ZJyle7ldIOg0Bhl8J3tovmTiLFb+Gz9x382XQBPNzVuyTVy6dAmgf91upVSAdB04t89/1O/w1cDnyilFU=";  // 填入您的 LINE Notify Token
+";        // 填入您的 LINE Notify Token
 const NOTIFY_EMAIL      = "canmas13@gmail.com";
 
 // 綠界設定
 const ECPAY_MERCHANT_ID = "3419991";
-const ECPAY_HASH_KEY    = "NcedddddddddUTdl0";
-const ECPAY_HASH_IV     = "g92Gx6DQ";
+const ECPAY_HASH_KEY    = "Ncehlnu02QkUTdl0";
+const ECPAY_HASH_IV     = "g92Gx6DQVKCJPmSv";
 
 // 正式環境 → true；測試環境 → false
 const ECPAY_PRODUCTION  = false;
