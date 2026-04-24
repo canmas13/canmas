@@ -466,10 +466,24 @@ function parseCSV(text){
 
 async function init(){
   buildTabs();
-  if(SHEET_CSV_URL){
-    try{const res=await fetch("https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(SHEET_CSV_URL));allData=parseCSV(await res.text());}
-    catch(e){console.warn("使用靜態資料",e);allData=STATIC_DATA;}
-  }else{allData=STATIC_DATA;}
+  // 從 Apps Script 直接取得豆單，無需 proxy
+  if(APPS_SCRIPT_URL){
+    try{
+      const res=await fetch(APPS_SCRIPT_URL+"?action=menu");
+      const json=await res.json();
+      if(json.status==="ok"&&json.data&&json.data.length>0){
+        allData=json.data;
+      }else{
+        console.warn("Apps Script豆單異常，使用靜態資料");
+        allData=STATIC_DATA;
+      }
+    }catch(e){
+      console.warn("使用靜態資料",e);
+      allData=STATIC_DATA;
+    }
+  }else{
+    allData=STATIC_DATA;
+  }
   render();
 }
 init();
